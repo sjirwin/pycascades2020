@@ -1,6 +1,12 @@
+# MacOS
+.DS_Store
+
+# python
 __pycache__/
 *.py[cod]
 *$py.class
 
+# stuff created by 'jekyll build'
 _site/
 .jekyll-metadata
+.jekyll-cache
