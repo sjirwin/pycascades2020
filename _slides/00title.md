@@ -20,7 +20,7 @@ https://sjirwin.github.io/pycascades2020/
 ## Binary Operators
 - _Binary operators_ are operators that take two inputs (called operands) which perform an operation on those inputs to produce a value
   - Example, <span style="color:indianred">`6 * 7`</span> produces the value <span style="color:indianred">`42`</span>
-- _Binary operators_ include the familiar numeric operators, such as <span style="color:indianred">`*`</span> and <span style="color:indianred">`+`</span>, which Python implements via special methods (e.g., <span style="color:indianred">`__mul__`</span>, <span style="color:indianred">`__add__`</span>)
+- _Binary operators_ include the familiar numeric operators, such as <span style="color:indianred">`*`</span> and <span style="color:indianred">`+`</span>, which Python implements via special methods (in this case <span style="color:indianred">`__mul__`</span> and <span style="color:indianred">`__add__`</span>, respecively)
 
 --
 
