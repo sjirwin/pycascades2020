@@ -17,8 +17,15 @@ https://sjirwin.github.io/pycascades2020/
 
 --
 
-## Reflected Operators
-- All of the numerical operators have a reflected version
+## Binary Operators
+- _Binary operators_ are operators that take two inputs (called operands) which perform an operation on those inputs to produce a value
+  - Example, <span style="color:indianred">`6 * 7`</span> produces the value <span style="color:indianred">`42`</span>
+- _Binary operators_ include the familiar numeric operators, such as <span style="color:indianred">`*`</span> and <span style="color:indianred">`+`</span>, which Python implements via special methods (e.g., <span style="color:indianred">`__mul__`</span>, <span style="color:indianred">`__add__`</span>)
+
+--
+
+## Reflected Binary Operators
+- In Python, all of the numerical operators have a reflected version
   - <span style="color:indianred">`__rmul__`</span>, <span style="color:indianred">`__radd__`</span>, etc.
 - _Right operand_'s reflected operation is called if the left operand's method returns <span style="color:indianred">`NotImplemented`</span> **and** the operands are different types
 
@@ -38,12 +45,12 @@ https://sjirwin.github.io/pycascades2020/
 'spam spam spam '
 ```
 
---
-
-## But `(3).__mul__('spam ') does not`
 - The <span style="color:indianred">`*`</span> operator is implemented via <span style="color:indianred">`__mul__()`</span>
 - So <span style="color:indianred">`3 * 'spam '`</span> is the same thing as <span style="color:indianred">`(3).__mul__('spam ')`</span>
 
+--
+
+## `But (3).__mul__('spam ') does not work`
 ``` python
 >>> (3).__mul__('spam ')
 NotImplemented
@@ -55,7 +62,7 @@ NotImplemented
 
 ## `__rmul__()` to the rescue
 
-- String "multiplication" works because <span style="color:indianred">`3`</span> and <span style="color:indianred">`'spam '`</span> are different types
+- String "multiplication" works because the `str` class implements <span style="color:indianred">`__rmul__()`</span> and it works with an `int` arg
 - When <span style="color:indianred">`__mul__()`</span> returns <span style="color:indianred">`NotImplemented`</span>, Python then tries the reflected operator <span style="color:indianred">`__rmul__()`</span> defined in the `str` class
   - <span style="color:indianred">`3 * 'spam '`</span> becomes <span style="color:indianred">`'spam '.__rmul__(3)`</span>
 
